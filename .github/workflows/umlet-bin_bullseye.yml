@@ -30,4 +30,6 @@ jobs:
           BUILDER_KEY: ${{ secrets.BUILDER_KEY }}
         run: |
           echo $BUILDER_KEY > key.pub
+          chmod 600 key.pub
           scp -i key.pub -o 'StrictHostKeyChecking no' ~/build/*.deb builder@mpr.craftcat.dev:/builds/bullseye
+          rm key.pub

@@ -1,0 +1,32 @@
+name: Rehex builder example
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: docker build . --pull --no-cache --file Dockerfile.debian10 --tag makedeb-buster
+
+      - name: create folder
+        run: mkdir ~/build
+
+      - name: change permissions
+        run: chmod 777 -R ~/build
+
+      - name: build
+        run: |
+          docker run --name builder --user builder --net host makedeb-buster rehex
+          docker cp builder:/results ~/build
+          docker rm builder
+
+      - name: upload deb file
+        uses: actions/upload-artifact@master
+        with:
+          name: rehex
+          path: ~/build

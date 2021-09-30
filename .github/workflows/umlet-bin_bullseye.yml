@@ -1,4 +1,4 @@
-name: Rehex Bullseye
+name: umlet-bin Bullseye
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
 
       - name: build
         run: |
-          docker run --name builder --user builder --net host makedeb-buster rehex
+          docker run --name builder --user builder --net host makedeb-buster umlet-bin
           docker cp builder:/results ~/build
           docker rm builder
           

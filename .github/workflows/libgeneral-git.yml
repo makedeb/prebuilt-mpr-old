@@ -24,7 +24,7 @@ jobs:
           docker run --name builder --user builder --net host zocker160/mpr-builder:bullseye libgeneral-git
           docker cp builder:/results ~/build
           docker rm builder
-          mv -v ~/build/results/*.deb ./libgeneral-git.deb
+          mv -v ~/build/results/libgeneral-git.deb .
           
       - name: upload file to repository server
         uses: appleboy/scp-action@master
@@ -60,7 +60,7 @@ jobs:
           docker run --name builder --user builder --net host zocker160/mpr-builder:focal libgeneral-git
           docker cp builder:/results ~/build
           docker rm builder
-          mv -v ~/build/results/*.deb ./libgeneral-git.deb
+          mv -v ~/build/results/libgeneral-git.deb .
           
       - name: upload file to repository server
         uses: appleboy/scp-action@master

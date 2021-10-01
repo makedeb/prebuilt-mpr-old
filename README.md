@@ -6,5 +6,5 @@ The builder for PrebuiltMPR
 
 
 | Package Name  |    Status     |
-| ------------- | ------------- |
+| :-----------: | ------------- |
 |   umlet-bin   | [![umlet-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/umlet-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/umlet-bin.yml)  |

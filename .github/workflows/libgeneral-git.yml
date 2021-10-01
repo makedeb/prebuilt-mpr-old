@@ -68,7 +68,7 @@ jobs:
           username: builder
           port: 22
           key: ${{ secrets.BUILDER_KEY }}
-          source: "libgeneral-git"
+          source: "libgeneral-git.deb"
           target: "/builds/focal"
       
       - name: Integrate deb files into repository

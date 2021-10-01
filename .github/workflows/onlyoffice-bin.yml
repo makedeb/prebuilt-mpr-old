@@ -60,7 +60,8 @@ jobs:
           docker run --name builder --user builder --net host zocker160/mpr-builder:focal onlyoffice-bin
           docker cp builder:/results ~/build
           docker rm builder
-          mv -v ~/build/results/*.deb "./onlyoffice-bin.deb"
+          #mv -v ~/build/results/*.deb "./onlyoffice-bin.deb"
+          mv -v ~/build/results/onlyoffice-bin.deb .
           
       - name: upload file to repository server
         uses: appleboy/scp-action@master

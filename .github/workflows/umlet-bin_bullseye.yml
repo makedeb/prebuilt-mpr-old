@@ -37,5 +37,5 @@ jobs:
           key: ${{ secrets.BUILDER_KEY }}
           fingerprint: ${{ secrets.SSH_TARGET_FINGERPRINT }}
           source: |
-            ~/build/umlet-bin.deb
+            /home/runner/build/umlet-bin.deb
           target: /builds/bullseye

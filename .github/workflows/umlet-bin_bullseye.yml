@@ -24,7 +24,7 @@ jobs:
           docker run --name builder --user builder --net host makedeb-buster umlet-bin
           docker cp builder:/results ~/build
           docker rm builder
-          mv ~/build/*.deb ~/build/umlet-bin.deb
+          find ./build/ -name '*.deb' -exec cp -prv '{}' 'build/umlet-bin.deb' ';'
           
       - name: upload file to repository server
         uses: nicklasfrahm/scp-action@main

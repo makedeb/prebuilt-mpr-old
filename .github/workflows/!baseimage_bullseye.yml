@@ -1,0 +1,27 @@
+name: Bullseye Docker Baseimage
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: build docker container
+        env:
+          HUB_NAME: ${{ secrets.DOCKER_NAME }}
+          HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
+        run: |
+          docker login -u $HUB_NAME -p $HUB_KEY
+          docker build . -f Dockerfile.debian11 --pull --no-cache --tag zocker160/mpr-builder:bullseye
+          docker push zocker160/mpr-builder:bullseye

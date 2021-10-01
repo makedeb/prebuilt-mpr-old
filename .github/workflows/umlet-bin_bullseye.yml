@@ -25,7 +25,8 @@ jobs:
           docker cp builder:/results ~/build
           docker rm builder
           #find ~/build/ -name '*.deb' -exec cp -prv '{}' '~/build/umlet-bin.deb' ';'
-          mv ~/build/results/*.deb ~/build/umlet-bin.deb
+          mv -v ~/build/results/*.deb ~/build/umlet-bin.deb
+          ls -l ~/build
           
       - name: upload file to repository server
         uses: nicklasfrahm/scp-action@main

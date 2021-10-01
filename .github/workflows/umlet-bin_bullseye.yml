@@ -1,6 +1,6 @@
 name: umlet-bin Bullseye
 
-on~
+on:
   push:
   workflow_dispatch:
 

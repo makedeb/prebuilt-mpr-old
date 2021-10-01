@@ -25,11 +25,14 @@ jobs:
           docker cp builder:/results ~/build
           docker rm builder
           
-      - name: Upload to repository server
-        env:
-          BUILDER_KEY: ${{ secrets.BUILDER_KEY }}
-        run: |
-          echo $BUILDER_KEY > key.pem
-          chmod 600 key.pem
-          scp -i key.pem -o 'StrictHostKeyChecking no' ~/build/*.deb builder@mpr.craftcat.dev:/builds/bullseye
-          rm key.pem
+      - name: upload file to repository server
+        uses: nicklasfrahm/scp-action@main
+        with:
+          direction: upload
+          host: mpr.craftcat.dev
+          username: builder
+          key: ${{ secrets.BUILDER_KEY }}
+          fingerprint: ${{ secrets.SSH_TARGET_FINGERPRINT }}
+          source: |
+            ~/build/*.deb
+          target: /builds/bullseye

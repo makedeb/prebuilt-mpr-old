@@ -2,6 +2,8 @@ name: $$$
 
 on:
   push:
+  schedule:
+    - cron: '0 1 * * *'
   workflow_dispatch:
 
 jobs:
@@ -31,6 +33,15 @@ jobs:
           key: ${{ secrets.BUILDER_KEY }}
           source: "$$$.deb"
           target: "/builds/bullseye"
+      
+      - name: Integrate deb files into repository
+        uses: appleboy/ssh-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          key: ${{ secrets.BUILDER_KEY }}
+          port: 22
+          script: "/bin/bash /builds/copy-debs-bullseye.sh"
 
   focal:
     runs-on: ubuntu-latest
@@ -58,3 +69,12 @@ jobs:
           key: ${{ secrets.BUILDER_KEY }}
           source: "$$$.deb"
           target: "/builds/focal"
+
+      - name: Integrate deb files into repository
+        uses: appleboy/ssh-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          key: ${{ secrets.BUILDER_KEY }}
+          port: 22
+          script: "/bin/bash /builds/copy-debs-focal.sh"

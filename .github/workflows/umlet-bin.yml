@@ -2,7 +2,7 @@ name: umlet-bin
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 1 * * *'
   push:
     paths:
       - '.github/workflows/umlet-bin.yml'

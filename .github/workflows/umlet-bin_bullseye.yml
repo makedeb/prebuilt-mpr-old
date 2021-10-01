@@ -28,6 +28,15 @@ jobs:
           mv -v ~/build/results/*.deb ~/build/umlet-bin.deb
           #ls -l ~/build
           
+      - name: create folder again
+        run: mkdir ./build
+
+      - name: change permissions again
+        run: chmod 777 -R ./build
+      
+      - name: copy deb to local folder
+        run: cp -v ~/build/umlet-bin.deb ./build/
+          
       - name: upload file to repository server
         uses: appleboy/scp-action@master
         with:
@@ -35,7 +44,7 @@ jobs:
           username: builder
           port: 22
           key: ${{ secrets.BUILDER_KEY }}
-          source: "~/build/umlet-bin.deb"
+          source: "build/umlet-bin.deb"
           target: "/builds/bullseye"
 #         uses: nicklasfrahm/scp-action@main
 #         with:

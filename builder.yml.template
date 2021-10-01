@@ -1,11 +1,11 @@
-name: $$$
+name: _template_
 
 on:
   schedule:
     - cron: '0 1 * * *'
   push:
     paths:
-      - '.github/workflows/$$$.yml'
+      - '.github/workflows/_template_.yml'
   workflow_dispatch:
 
 jobs:
@@ -21,10 +21,10 @@ jobs:
 
       - name: build
         run: |
-          docker run --name builder --user builder --net host zocker160/mpr-builder:bullseye $$$
+          docker run --name builder --user builder --net host zocker160/mpr-builder:bullseye _template_
           docker cp builder:/results ~/build
           docker rm builder
-          mv -v ~/build/results/*.deb ./$$$.deb
+          mv -v ~/build/results/*.deb ./_template_.deb
           
       - name: upload file to repository server
         uses: appleboy/scp-action@master
@@ -33,7 +33,7 @@ jobs:
           username: builder
           port: 22
           key: ${{ secrets.BUILDER_KEY }}
-          source: "$$$.deb"
+          source: "_template_.deb"
           target: "/builds/bullseye"
       
       - name: Integrate deb files into repository
@@ -57,10 +57,10 @@ jobs:
 
       - name: build
         run: |
-          docker run --name builder --user builder --net host zocker160/mpr-builder:focal $$$
+          docker run --name builder --user builder --net host zocker160/mpr-builder:focal _template_
           docker cp builder:/results ~/build
           docker rm builder
-          mv -v ~/build/results/*.deb ./$$$.deb
+          mv -v ~/build/results/*.deb ./_template_.deb
           
       - name: upload file to repository server
         uses: appleboy/scp-action@master
@@ -69,7 +69,7 @@ jobs:
           username: builder
           port: 22
           key: ${{ secrets.BUILDER_KEY }}
-          source: "$$$.deb"
+          source: "_template_.deb"
           target: "/builds/focal"
 
       - name: Integrate deb files into repository

@@ -1,9 +1,11 @@
 name: $$$
 
 on:
-  push:
   schedule:
     - cron: '0 1 * * *'
+  push:
+    paths:
+      - '.github/workflows/$$$.yml'
   workflow_dispatch:
 
 jobs:

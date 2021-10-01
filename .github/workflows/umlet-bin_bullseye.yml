@@ -29,13 +29,21 @@ jobs:
           ls -l ~/build
           
       - name: upload file to repository server
-        uses: nicklasfrahm/scp-action@main
+        uses: appleboy/scp-action@master
         with:
-          direction: upload
           host: mpr.craftcat.dev
           username: builder
+          port: 22
           key: ${{ secrets.BUILDER_KEY }}
-          fingerprint: ${{ secrets.SSH_TARGET_FINGERPRINT }}
-          source: |
-            /home/runner/build/umlet-bin.deb
-          target: /builds/bullseye
+          source: "build/umlet-bin.deb"
+          target: "/builds/bullseye"
+#         uses: nicklasfrahm/scp-action@main
+#         with:
+#           direction: upload
+#           host: mpr.craftcat.dev
+#           username: builder
+#           key: ${{ secrets.BUILDER_KEY }}
+#           fingerprint: ${{ secrets.SSH_TARGET_FINGERPRINT }}
+#           source: |
+#             /home/runner/build/umlet-bin.deb
+#           target: /builds/bullseye

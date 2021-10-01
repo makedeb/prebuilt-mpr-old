@@ -21,7 +21,7 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg arch=all] https://mpr.c
 
 
 | Package Name  |    Status     |
-| :-----------: | ------------- |
+| :-----------: | ------------: |
 |   umlet-bin   | [![umlet-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/umlet-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/umlet-bin.yml)  |
 |   libgeneral-git   | [![libgeneral-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libgeneral-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libgeneral-git.yml)  |
 |   tap   | [![tap](https://github.com/PrebuiltMPR/builder/actions/workflows/tap.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/tap.yml)  |

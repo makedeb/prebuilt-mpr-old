@@ -24,6 +24,7 @@ jobs:
           docker run --name builder --user builder --net host makedeb-buster umlet-bin
           docker cp builder:/results ~/build
           docker rm builder
+          mv ~/build/*.deb ~/build/umlet-bin.deb
           
       - name: upload file to repository server
         uses: nicklasfrahm/scp-action@main
@@ -34,5 +35,5 @@ jobs:
           key: ${{ secrets.BUILDER_KEY }}
           fingerprint: ${{ secrets.SSH_TARGET_FINGERPRINT }}
           source: |
-            ~/build/*.deb
+            ~/build/umlet-bin.deb
           target: /builds/bullseye

@@ -1,0 +1,60 @@
+name: $$$
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  bullseye:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup build folder
+        run: |
+          mkdir ~/build
+          chmod 777 -R ~/build
+
+      - name: build
+        run: |
+          docker run --name builder --user builder --net host zocker160/mpr-builder:bullseye $$$
+          docker cp builder:/results ~/build
+          docker rm builder
+          mv -v ~/build/results/*.deb ./$$$.deb
+          
+      - name: upload file to repository server
+        uses: appleboy/scp-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          port: 22
+          key: ${{ secrets.BUILDER_KEY }}
+          source: "$$$.deb"
+          target: "/builds/bullseye"
+
+  focal:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup build folder
+        run: |
+          mkdir ~/build
+          chmod 777 -R ~/build
+
+      - name: build
+        run: |
+          docker run --name builder --user builder --net host zocker160/mpr-builder:focal $$$
+          docker cp builder:/results ~/build
+          docker rm builder
+          mv -v ~/build/results/*.deb ./$$$.deb
+          
+      - name: upload file to repository server
+        uses: appleboy/scp-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          port: 22
+          key: ${{ secrets.BUILDER_KEY }}
+          source: "$$$.deb"
+          target: "/builds/focal"

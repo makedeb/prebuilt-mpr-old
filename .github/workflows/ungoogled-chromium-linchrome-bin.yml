@@ -1,0 +1,82 @@
+name: ungoogled-chromium-linchrome-bin
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  push:
+    paths:
+      - '.github/workflows/ungoogled-chromium-linchrome-bin.yml'
+  workflow_dispatch:
+
+jobs:
+  bullseye:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup build folder
+        run: |
+          mkdir ~/build
+          chmod 777 -R ~/build
+
+      - name: build
+        run: |
+          docker run --name builder --user builder --net host zocker160/mpr-builder:bullseye ungoogled-chromium-linchrome-bin
+          docker cp builder:/results ~/build
+          docker rm builder
+          mv -v ~/build/results/ungoogled-chromium-linchrome-bin.deb .
+          
+      - name: upload file to repository server
+        uses: appleboy/scp-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          port: 22
+          key: ${{ secrets.BUILDER_KEY }}
+          source: "ungoogled-chromium-linchrome-bin.deb"
+          target: "/builds/bullseye"
+      
+      - name: Integrate deb files into repository
+        uses: appleboy/ssh-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          key: ${{ secrets.BUILDER_KEY }}
+          port: 22
+          script: "/bin/bash /builds/copy-debs-bullseye.sh"
+
+  focal:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup build folder
+        run: |
+          mkdir ~/build
+          chmod 777 -R ~/build
+
+      - name: build
+        run: |
+          docker run --name builder --user builder --net host zocker160/mpr-builder:focal ungoogled-chromium-linchrome-bin
+          docker cp builder:/results ~/build
+          docker rm builder
+          mv -v ~/build/results/ungoogled-chromium-linchrome-bin.deb .
+          
+      - name: upload file to repository server
+        uses: appleboy/scp-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          port: 22
+          key: ${{ secrets.BUILDER_KEY }}
+          source: "ungoogled-chromium-linchrome-bin.deb"
+          target: "/builds/focal"
+
+      - name: Integrate deb files into repository
+        uses: appleboy/ssh-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          key: ${{ secrets.BUILDER_KEY }}
+          port: 22
+          script: "/bin/bash /builds/copy-debs-focal.sh"

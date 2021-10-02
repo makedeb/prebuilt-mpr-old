@@ -1,7 +1,7 @@
 #! /bin/bash
 
 echo "found $(nproc) cores"
-export DEBIAN_FRONTEND=noninteractive && makedeb -s | tee ~/$1-build.log
+makedeb -s | tee ~/$1-build.log
 
 if [ "$2" == "--container" ]
 then

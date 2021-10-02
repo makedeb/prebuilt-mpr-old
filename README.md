@@ -26,3 +26,7 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg arch=all] https://mpr.c
 |   libgeneral-git   | [![libgeneral-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libgeneral-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libgeneral-git.yml)  |
 |   tap   | [![tap](https://github.com/PrebuiltMPR/builder/actions/workflows/tap.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/tap.yml)  |
 |   onlyoffice-bin   | [![onlyoffice-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/onlyoffice-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/onlyoffice-bin.yml)  |
+|   dino   | [![dino](https://github.com/PrebuiltMPR/builder/actions/workflows/dino.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/dino.yml)  |
+|   openrgb-bin   | [![openrgb-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/openrgb-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/openrgb-bin.yml)  |
+|   rehex   | [![rehex](https://github.com/PrebuiltMPR/builder/actions/workflows/rehex.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/rehex.yml)  |
+|   discord   | [![discord](https://github.com/PrebuiltMPR/builder/actions/workflows/discord.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/discord.yml)  |

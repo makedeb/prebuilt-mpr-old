@@ -74,7 +74,7 @@ jobs:
           username: builder
           port: 22
           key: ${{ secrets.BUILDER_KEY }}
-          source: ${{ FULL_PKGVER }}
+          source: ${{ env.FULL_PKGVER }}
           target: "/builds/focal"
 
       - name: Integrate deb files into repository

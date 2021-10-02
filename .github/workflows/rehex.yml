@@ -24,8 +24,10 @@ jobs:
           docker run --name builder --user builder --net host zocker160/mpr-builder:bullseye rehex
           docker cp builder:/results ~/build
           docker rm builder
-          mv -v ~/build/results/rehex.deb .
-          
+          export FULL_PKGVER="$(cat ~/build/results/name.txt)"
+          echo "FULL_PKGVER=$(cat ~/build/results/name.txt)" >> $GITHUB_ENV
+          mv -v ~/build/results/${FULL_PKGVER} .
+
       - name: upload file to repository server
         uses: appleboy/scp-action@master
         with:
@@ -33,9 +35,9 @@ jobs:
           username: builder
           port: 22
           key: ${{ secrets.BUILDER_KEY }}
-          source: "rehex.deb"
+          source: ${{ env.FULL_PKGVER }}
           target: "/builds/bullseye"
-      
+
       - name: Integrate deb files into repository
         uses: appleboy/ssh-action@master
         with:
@@ -60,8 +62,10 @@ jobs:
           docker run --name builder --user builder --net host zocker160/mpr-builder:focal rehex
           docker cp builder:/results ~/build
           docker rm builder
-          mv -v ~/build/results/rehex.deb .
-          
+          export FULL_PKGVER="$(cat ~/build/results/name.txt)"
+          echo "FULL_PKGVER=$(cat ~/build/results/name.txt)" >> $GITHUB_ENV
+          mv -v ~/build/results/${FULL_PKGVER} .
+
       - name: upload file to repository server
         uses: appleboy/scp-action@master
         with:
@@ -69,7 +73,7 @@ jobs:
           username: builder
           port: 22
           key: ${{ secrets.BUILDER_KEY }}
-          source: "rehex.deb"
+          source: ${{ env.FULL_PKGVER }}
           target: "/builds/focal"
 
       - name: Integrate deb files into repository

@@ -60,11 +60,8 @@ jobs:
           docker run --name builder --user builder --net host zocker160/mpr-builder:focal onlyoffice-bin
           docker cp builder:/results ~/build
           docker rm builder
-          mv -v ~/build/results/onlyoffice-bin.deb .
-          mv -v ~/build/results/onlyoffice-bin.txt .
-          export PKGVER="$(cat ./onlyoffice-bin.txt | cut -f 2 -d"_")"
-          my ./onlyoffice-bin.deb ./onlyoffice-bin_"$PKGVER".deb
-          export FULL_PKGVER="onlyoffice-bin_$PKGVER.deb"
+          export FULL_PKGVER = "$(cat ~/build/results/name.txt)"
+          mv -v ~/build/results/${FULL_PKGVER} .
 
 
       - name: upload file to repository server

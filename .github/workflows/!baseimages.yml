@@ -6,6 +6,10 @@ on:
   push:
     paths:
       - '.github/workflows/!baseimages.yml'
+      - 'Dockerfile.debian11'
+      - 'Dockerfile.focal'
+      - 'zabuilder.sh'
+      - 'zbuilder.sh'
   workflow_dispatch:
 
 jobs:

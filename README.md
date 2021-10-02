@@ -31,3 +31,4 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg arch=all] https://mpr.c
 |   rehex   | [![rehex](https://github.com/PrebuiltMPR/builder/actions/workflows/rehex.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/rehex.yml)  |
 |   discord   | [![discord](https://github.com/PrebuiltMPR/builder/actions/workflows/discord.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/discord.yml)  |
 |   ungoogled-chromium-linchrome-bin   | [![ungoogled-chromium-linchrome-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/ungoogled-chromium-linchrome-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/ungoogled-chromium-linchrome-bin.yml)  |
+|   neovim-git   | [![neovim-git](https://github.com/PrebuiltMPR/builder/actions/workflows/neovim-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/neovim-git.yml)  |

@@ -3,6 +3,9 @@ name: Docker Baseimage Builder
 on:
   schedule:
     - cron: '0 0 * * *'
+  push:
+    paths:
+      - '.github/workflows/!baseimages.yml'
   workflow_dispatch:
 
 jobs:

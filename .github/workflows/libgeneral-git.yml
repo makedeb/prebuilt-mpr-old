@@ -1,11 +1,11 @@
-name: img4tool-git
+name: libgeneral-git
 
 on:
   schedule:
     - cron: '0 1 * * *'
   push:
     paths:
-      - '.github/workflows/img4tool-git.yml'
+      - '.github/workflows/libgeneral-git.yml'
   workflow_dispatch:
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
 
       - name: build
         run: |
-          docker run --name builder --user builder --net host zocker160/mpr-builder:bullseye img4tool-git
+          docker run --name builder --user builder --net host zocker160/mpr-builder:bullseye libgeneral-git
           docker cp builder:/results ~/build
           docker rm builder
           export FULL_PKGVER="$(cat ~/build/results/name.txt)"
@@ -59,7 +59,7 @@ jobs:
 
       - name: build
         run: |
-          docker run --name builder --user builder --net host zocker160/mpr-builder:focal img4tool-git
+          docker run --name builder --user builder --net host zocker160/mpr-builder:focal libgeneral-git
           docker cp builder:/results ~/build
           docker rm builder
           export FULL_PKGVER="$(cat ~/build/results/name.txt)"

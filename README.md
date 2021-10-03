@@ -34,3 +34,4 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.d
 |   neovim-git   | [![neovim-git](https://github.com/PrebuiltMPR/builder/actions/workflows/neovim-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/neovim-git.yml)  |
 |   yt-dlp-bin   | [![yt-dlp-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/yt-dlp-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/yt-dlp-bin.yml)  |
 |   meson   | [![meson](https://github.com/PrebuiltMPR/builder/actions/workflows/meson.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/meson.yml)  |
+|   lfzse-git   | [![lfzse-git](https://github.com/PrebuiltMPR/builder/actions/workflows/lfzse-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/lfzse-git.yml)  |

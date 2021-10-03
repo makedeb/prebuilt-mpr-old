@@ -1,11 +1,11 @@
-name: lfzse-git
+name: lzfse-git
 
 on:
   schedule:
     - cron: '0 1 * * *'
   push:
     paths:
-      - '.github/workflows/lfzse-git.yml'
+      - '.github/workflows/lzfse-git.yml'
   workflow_dispatch:
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
 
       - name: build
         run: |
-          docker run --name builder --user builder --net host zocker160/mpr-builder:bullseye lfzse-git
+          docker run --name builder --user builder --net host zocker160/mpr-builder:bullseye lzfse-git
           docker cp builder:/results ~/build
           docker rm builder
           export FULL_PKGVER="$(cat ~/build/results/name.txt)"
@@ -59,7 +59,7 @@ jobs:
 
       - name: build
         run: |
-          docker run --name builder --user builder --net host zocker160/mpr-builder:focal lfzse-git
+          docker run --name builder --user builder --net host zocker160/mpr-builder:focal lzfse-git
           docker cp builder:/results ~/build
           docker rm builder
           export FULL_PKGVER="$(cat ~/build/results/name.txt)"

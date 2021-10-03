@@ -9,9 +9,17 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration -y
 RUN apt-get install wget gpg sudo apt-utils -y
 RUN apt-get install lsb-release gettext wget curl build-essential cmake g++ sudo gpg git autoconf automake libtool -y
 
+# Install makedeb & add PrebuiltMPR repo
+RUN wget -qO - "https://proget.hunterwittenborn.com/debian-feeds/makedeb.pub" | \
+    gpg --dearmor | \
+    tee /usr/share/keyrings/makedeb-archive-keyring.gpg 1> /dev/null
+
 RUN wget -qO - 'https://mpr.craftcat.dev/pubkey.gpg' | \
     gpg --dearmor | \
     sudo tee /usr/share/keyrings/prebuiltmpr.gpg &> /dev/null
+
+# Not sure why we need this but if it works, not going to touch it
+RUN gpg --keyserver keyserver.ubuntu.com --recv-keys 539D303EC23F7290
 
 RUN echo "deb [signed-by=/usr/share/keyrings/makedeb-archive-keyring.gpg arch=all] https://proget.hunterwittenborn.com/ makedeb main" | \
     tee /etc/apt/sources.list.d/makedeb.list

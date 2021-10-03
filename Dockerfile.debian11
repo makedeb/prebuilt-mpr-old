@@ -19,7 +19,7 @@ RUN wget -qO - 'https://mpr.craftcat.dev/pubkey.gpg' | \
     sudo tee /usr/share/keyrings/prebuiltmpr.gpg &> /dev/null
 
 # Not sure why we need this but if it works, not going to touch it
-RUN gpg --keyserver keyserver.ubuntu.com --recv-keys 539D303EC23F7290
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 539D303EC23F7290
 
 RUN echo "deb [signed-by=/usr/share/keyrings/makedeb-archive-keyring.gpg arch=all] https://proget.hunterwittenborn.com/ makedeb main" | \
     tee /etc/apt/sources.list.d/makedeb.list

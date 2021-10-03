@@ -35,7 +35,7 @@ jobs:
           username: builder
           port: 22
           key: ${{ secrets.BUILDER_KEY }}
-          source: "discord.deb"
+          source: ${{ env.FULL_PKGVER }}
           target: "/builds/bullseye"
 
       - name: Integrate deb files into repository

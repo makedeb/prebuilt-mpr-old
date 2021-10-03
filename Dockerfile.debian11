@@ -9,13 +9,15 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration -y
 RUN apt-get install wget gpg sudo apt-utils -y
 RUN apt-get install lsb-release gettext wget curl build-essential cmake g++ sudo gpg git autoconf automake libtool -y
 
-# Install makedeb
-RUN wget -qO - "https://proget.hunterwittenborn.com/debian-feeds/makedeb.pub" | \
+RUN wget -qO - 'https://mpr.craftcat.dev/pubkey.gpg' | \
     gpg --dearmor | \
-    tee /usr/share/keyrings/makedeb-archive-keyring.gpg 1> /dev/null
+    sudo tee /usr/share/keyrings/prebuiltmpr.gpg &> /dev/null
 
 RUN echo "deb [signed-by=/usr/share/keyrings/makedeb-archive-keyring.gpg arch=all] https://proget.hunterwittenborn.com/ makedeb main" | \
     tee /etc/apt/sources.list.d/makedeb.list
+
+RUN echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.dev/ bullseye main' | \
+    sudo tee /etc/apt/sources.list.d/prebuiltmpr.list
 
 RUN apt-get update
 RUN apt-get install makedeb -y

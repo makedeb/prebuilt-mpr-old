@@ -37,3 +37,4 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.d
 |   lzfse-git   | [![lzfse-git](https://github.com/PrebuiltMPR/builder/actions/workflows/lzfse-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/lzfse-git.yml)  |
 |   img4tool-git   | [![img4tool-git](https://github.com/PrebuiltMPR/builder/actions/workflows/img4tool-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/img4tool-git.yml)  |
 |   libgeneral-fr-git   | [![libgeneral-fr-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libgeneral-fr-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libgeneral-fr-git.yml)  |
+|   libfragmentzip-git   | [![libfragmentzip-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libfragmentzip-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libfragmentzip-git.yml)  |

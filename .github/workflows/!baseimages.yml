@@ -41,5 +41,5 @@ jobs:
           CR_PAT: ${{ secrets.CR_PAT }}
         run: |
           echo $CR_PAT | docker login ghcr.io -u PrebuiltMPR --password-stdin
-          docker build . -f Dockerfile.focal --pull --no-cache --tag ghcr.io/PrebuiltMPR/mpr-builder:focal
+          docker build . -f Dockerfile.focal --pull --no-cache --tag ghcr.io/prebuildmpr/mpr-builder:focal
           docker push ghcr.io/PrebuiltMPR/mpr-builder:focal

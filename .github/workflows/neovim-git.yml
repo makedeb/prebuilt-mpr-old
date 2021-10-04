@@ -21,7 +21,7 @@ jobs:
 
       - name: build
         run: |
-          docker run --name builder --user builder --net host zocker160/mpr-builder:bullseye neovim-git
+          docker run --name builder --user builder --net host ghcr.io/PrebuiltMPR/mpr-builder:bullseye neovim-git
           docker cp builder:/results ~/build
           docker rm builder
           export FULL_PKGVER="$(cat ~/build/results/name.txt)"
@@ -59,7 +59,7 @@ jobs:
 
       - name: build
         run: |
-          docker run --name builder --user builder --net host zocker160/mpr-builder:focal neovim-git
+          docker run --name builder --user builder --net host ghcr.io/PrebuiltMPR/mpr-builder:focal neovim-git
           docker cp builder:/results ~/build
           docker rm builder
           export FULL_PKGVER="$(cat ~/build/results/name.txt)"

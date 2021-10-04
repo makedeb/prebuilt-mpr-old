@@ -40,3 +40,4 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.d
 |   libfragmentzip-git   | [![libfragmentzip-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libfragmentzip-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libfragmentzip-git.yml)  |
 |   libirecovery   | [![libirecovery](https://github.com/PrebuiltMPR/builder/actions/workflows/libirecovery.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libirecovery.yml)  |
 |   libimobiledevice-glue-git   | [![libimobiledevice-glue-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libimobiledevice-glue-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libimobiledevice-glue-git.yml)  |
+|   libplist-git   | [![libplist-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libplist-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libplist-git.yml)  |

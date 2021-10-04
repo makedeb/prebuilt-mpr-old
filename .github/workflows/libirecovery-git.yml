@@ -1,0 +1,86 @@
+name: libirecovery-git
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  push:
+    paths:
+      - '.github/workflows/libirecovery-git.yml'
+  workflow_dispatch:
+
+jobs:
+  bullseye:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup build folder
+        run: |
+          mkdir ~/build
+          chmod 777 -R ~/build
+
+      - name: build
+        run: |
+          docker run --name builder --user builder --net host ghcr.io/prebuiltmpr/mpr-builder:bullseye libirecovery-git
+          docker cp builder:/results ~/build
+          docker rm builder
+          export FULL_PKGVER="$(cat ~/build/results/name.txt)"
+          echo "FULL_PKGVER=$(cat ~/build/results/name.txt)" >> $GITHUB_ENV
+          mv -v ~/build/results/${FULL_PKGVER} .
+
+      - name: upload file to repository server
+        uses: appleboy/scp-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          port: 22
+          key: ${{ secrets.BUILDER_KEY }}
+          source: ${{ env.FULL_PKGVER }}
+          target: "/builds/bullseye"
+
+      - name: Integrate deb files into repository
+        uses: appleboy/ssh-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          key: ${{ secrets.BUILDER_KEY }}
+          port: 22
+          script: "/bin/bash /builds/copy-debs-bullseye.sh"
+
+  focal:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup build folder
+        run: |
+          mkdir ~/build
+          chmod 777 -R ~/build
+
+      - name: build
+        run: |
+          docker run --name builder --user builder --net host ghcr.io/prebuiltmpr/mpr-builder:focal libirecovery-git
+          docker cp builder:/results ~/build
+          docker rm builder
+          export FULL_PKGVER="$(cat ~/build/results/name.txt)"
+          echo "FULL_PKGVER=$(cat ~/build/results/name.txt)" >> $GITHUB_ENV
+          mv -v ~/build/results/${FULL_PKGVER} .
+
+      - name: upload file to repository server
+        uses: appleboy/scp-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          port: 22
+          key: ${{ secrets.BUILDER_KEY }}
+          source: ${{ env.FULL_PKGVER }}
+          target: "/builds/focal"
+
+      - name: Integrate deb files into repository
+        uses: appleboy/ssh-action@master
+        with:
+          host: mpr.craftcat.dev
+          username: builder
+          key: ${{ secrets.BUILDER_KEY }}
+          port: 22
+          script: "/bin/bash /builds/copy-debs-focal.sh"

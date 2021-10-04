@@ -39,4 +39,3 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.d
 |   libgeneral-fr-git   | [![libgeneral-fr-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libgeneral-fr-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libgeneral-fr-git.yml)  |
 |   libfragmentzip-git   | [![libfragmentzip-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libfragmentzip-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libfragmentzip-git.yml)  |
 |   libirecovery   | [![libirecovery](https://github.com/PrebuiltMPR/builder/actions/workflows/libirecovery.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libirecovery.yml)  |
-|   libimobiledevice-git   | [![libimobiledevice-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libimobiledevice-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libimobiledevice-git.yml)  |

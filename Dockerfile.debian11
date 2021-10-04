@@ -3,6 +3,8 @@ FROM debian:11
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Berlin
 
+LABEL org.opencontainers.image.source="https://github.com/PrebuiltMPR/builder"
+
 RUN apt-get update
 RUN apt-get dist-upgrade -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration -y

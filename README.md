@@ -44,3 +44,4 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.d
 |   libimobiledevice-git   | [![libimobiledevice-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libimobiledevice-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libimobiledevice-git.yml)  |
 |   libusbmuxd-git   | [![libusbmuxd-git](https://github.com/PrebuiltMPR/builder/actions/workflows/libusbmuxd-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libusbmuxd-git.yml)  |
 |   libirecovery   | [![libirecovery](https://github.com/PrebuiltMPR/builder/actions/workflows/libirecovery.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libirecovery.yml)  |
+|   blobsaver-bin   | [![blobsaver-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/blobsaver-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/blobsaver-bin.yml)  |

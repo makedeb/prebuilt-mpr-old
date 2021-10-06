@@ -2,7 +2,7 @@ name: img4tool-git
 
 on:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '5 1 * * *'
   push:
     paths:
       - '.github/workflows/img4tool-git.yml'

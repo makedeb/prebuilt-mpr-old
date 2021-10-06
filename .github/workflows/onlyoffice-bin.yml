@@ -2,7 +2,7 @@ name: onlyoffice-bin
 
 on:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '5 1 * * *'
   push:
     paths:
       - '.github/workflows/onlyoffice-bin.yml'

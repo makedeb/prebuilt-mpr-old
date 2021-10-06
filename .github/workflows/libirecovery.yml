@@ -2,7 +2,7 @@ name: libirecovery
 
 on:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '5 1 * * *'
   push:
     paths:
       - '.github/workflows/libirecovery.yml'

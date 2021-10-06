@@ -2,7 +2,7 @@ name: libplist-git
 
 on:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '5 1 * * *'
   push:
     paths:
       - '.github/workflows/libplist-git.yml'

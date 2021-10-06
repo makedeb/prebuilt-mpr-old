@@ -54,3 +54,4 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.d
 |   blobsaver-bin   | [![blobsaver-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/blobsaver-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/blobsaver-bin.yml)  |
 |   bless   | [![bless](https://github.com/PrebuiltMPR/builder/actions/workflows/bless.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/bless.yml)  |
 |   glslang   | [![glslang](https://github.com/PrebuiltMPR/builder/actions/workflows/glslang.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/glslang.yml)  |
+|   mangohud   | [![mangohud](https://github.com/PrebuiltMPR/builder/actions/workflows/mangohud.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/mangohud.yml)  |

@@ -53,3 +53,4 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.d
 |   libirecovery   | [![libirecovery](https://github.com/PrebuiltMPR/builder/actions/workflows/libirecovery.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/libirecovery.yml)  |
 |   blobsaver-bin   | [![blobsaver-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/blobsaver-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/blobsaver-bin.yml)  |
 |   bless   | [![bless](https://github.com/PrebuiltMPR/builder/actions/workflows/bless.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/bless.yml)  |
+|   glslang   | [![glslang](https://github.com/PrebuiltMPR/builder/actions/workflows/glslang.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/glslang.yml)  |

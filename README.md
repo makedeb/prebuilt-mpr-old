@@ -1,4 +1,11 @@
 # Package Builder for the PrebuiltMPR repository
+
+PrebuiltMPR is an APT repository for Debian stable and Ubuntu LTS which provides prebuild packages from the [MPR](https://mpr.hunterwittenborn.com/) repository.
+
+## Add Package
+
+If you want to have a certain package available in PrebuiltMPR, then please feel free to open an [issue](https://github.com/PrebuiltMPR/builder/issues) with a package request.
+
 ## Get Started
 ### Add GPG key
 ```bash

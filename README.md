@@ -55,3 +55,4 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.d
 |   bless   | [![bless](https://github.com/PrebuiltMPR/builder/actions/workflows/bless.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/bless.yml)  |
 |   glslang   | [![glslang](https://github.com/PrebuiltMPR/builder/actions/workflows/glslang.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/glslang.yml)  |
 |   mangohud   | [![mangohud](https://github.com/PrebuiltMPR/builder/actions/workflows/mangohud.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/mangohud.yml)  |
+|   librewolf-bin   | [![librewolf-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/librewolf-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/librewolf-bin.yml)  |

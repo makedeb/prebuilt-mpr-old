@@ -57,3 +57,4 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.d
 |   mangohud   | [![mangohud](https://github.com/PrebuiltMPR/builder/actions/workflows/mangohud.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/mangohud.yml)  |
 |   librewolf-bin   | [![librewolf-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/librewolf-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/librewolf-bin.yml)  |
 |   github-cli-bin   | [![github-cli-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/github-cli-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/github-cli-bin.yml)  |
+|   lolz-git   | [![lolz-git](https://github.com/PrebuiltMPR/builder/actions/workflows/lolz-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/lolz-git.yml)  |

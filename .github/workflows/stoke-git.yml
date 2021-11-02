@@ -1,11 +1,11 @@
-name: lolz-git
+name: stoke-git
 
 on:
   schedule:
     - cron: '5 1 * * *'
   push:
     paths:
-      - '.github/workflows/lolz-git.yml'
+      - '.github/workflows/stoke-git.yml'
   workflow_dispatch:
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
 
       - name: build
         run: |
-          docker run --name builder --user builder --net host ghcr.io/prebuiltmpr/mpr-builder:bullseye lolz-git
+          docker run --name builder --user builder --net host ghcr.io/prebuiltmpr/mpr-builder:bullseye stoke-git
           docker cp builder:/results ~/build
           docker rm builder
           export FULL_PKGVER="$(cat ~/build/results/name.txt)"
@@ -50,7 +50,7 @@ jobs:
 
       - name: build
         run: |
-          docker run --name builder --user builder --net host ghcr.io/prebuiltmpr/mpr-builder:focal lolz-git
+          docker run --name builder --user builder --net host ghcr.io/prebuiltmpr/mpr-builder:focal stoke-git
           docker cp builder:/results ~/build
           docker rm builder
           export FULL_PKGVER="$(cat ~/build/results/name.txt)"

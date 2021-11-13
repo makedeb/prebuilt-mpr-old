@@ -58,3 +58,4 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.d
 |   librewolf-bin   | [![librewolf-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/librewolf-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/librewolf-bin.yml)  |
 |   github-cli-bin   | [![github-cli-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/github-cli-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/github-cli-bin.yml)  |
 |   stoke-git   | [![stoke-git](https://github.com/PrebuiltMPR/builder/actions/workflows/stoke-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/stoke-git.yml)  |
+|   i3-gaps-git   | [![i3-gaps-git](https://github.com/PrebuiltMPR/builder/actions/workflows/i3-gaps-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/i3-gaps-git.yml)  |

@@ -2,7 +2,7 @@
 
 echo "found $(nproc) cores"
 sudo apt update
-makedeb -s | tee ~/$1-build.log
+makedeb -s --no-confirm | tee ~/$1-build.log
 
 if [ "$2" == "--container" ]
 then

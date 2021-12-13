@@ -9,7 +9,7 @@ RUN apt-get update
 RUN apt-get dist-upgrade -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration -y
 RUN apt-get install wget gpg sudo apt-utils ca-certificates -y
-RUN apt-get install lsb-release gettext wget curl build-essential cmake g++ sudo gpg git autoconf automake libtool pkg-config libpthread-stubs0-dev libssl-dev libevent-pthreads-2.1-7 -y
+RUN apt-get install lsb-release gettext wget curl build-essential cmake g++ sudo gpg git autoconf automake libtool pkg-config libpthread-stubs0-dev libssl-dev libevent-pthreads-2.1-7 zstd -y
 
 # Install makedeb & add PrebuiltMPR repo
 RUN wget -qO - "https://proget.hunterwittenborn.com/debian-feeds/makedeb.pub" | \

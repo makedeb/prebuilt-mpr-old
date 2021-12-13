@@ -27,16 +27,9 @@ jobs:
           export FULL_PKGVER="$(cat ~/build/results/name.txt)"
           echo "FULL_PKGVER=$(cat ~/build/results/name.txt)" >> $GITHUB_ENV
           mv -v ~/build/results/${FULL_PKGVER} .
-
-      - name: upload file to repository server
-        uses: appleboy/scp-action@master
-        with:
-          host: mpr.craftcat.dev
-          username: builder
-          port: 12488
-          key: ${{ secrets.BUILDER_KEY }}
-          source: ${{ env.FULL_PKGVER }}
-          target: "/builds/bullseye"
+          sudo apt install python3 python3-pip
+          pip3 install --upgrade cloudsmith-cli
+          cloudsmith push deb -k ${{ secrets.CLOUDSMITH_KEY }} prebuiltmpr/prebuiltmpr/debian/bullseye ./${FULL_PKGVER}
 
   focal:
     runs-on: ubuntu-latest
@@ -56,14 +49,5 @@ jobs:
           export FULL_PKGVER="$(cat ~/build/results/name.txt)"
           echo "FULL_PKGVER=$(cat ~/build/results/name.txt)" >> $GITHUB_ENV
           mv -v ~/build/results/${FULL_PKGVER} .
-
-      - name: upload file to repository server
-        uses: appleboy/scp-action@master
-        with:
-          host: mpr.craftcat.dev
-          username: builder
-          port: 12488
-          key: ${{ secrets.BUILDER_KEY }}
-          source: ${{ env.FULL_PKGVER }}
-          target: "/builds/focal"
+          cloudsmith push deb -k ${{ secrets.CLOUDSMITH_KEY }} prebuiltmpr/prebuiltmpr/debian/focal ./${FULL_PKGVER}
 

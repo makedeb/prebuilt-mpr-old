@@ -27,10 +27,10 @@ jobs:
           export FULL_PKGVER="$(cat ~/build/results/name.txt)"
           echo "FULL_PKGVER=$(cat ~/build/results/name.txt)" >> $GITHUB_ENV
           mv -v ~/build/results/${FULL_PKGVER} .
-          sudo apt install python3 python3-pip
-          pip3 install --upgrade cloudsmith-cli
       - name: upload
         run: |   
+          sudo apt install python3 python3-pip
+          sudo pip3 install --upgrade cloudsmith-cli
           cloudsmith push deb -k ${{ secrets.CLOUDSMITH_KEY }} prebuiltmpr/prebuiltmpr/debian/bullseye ./${FULL_PKGVER}
 
   focal:
@@ -53,5 +53,6 @@ jobs:
           mv -v ~/build/results/${FULL_PKGVER} .
       - name: upload    
         run: |
+          sudo apt install python3 python3-pip
+          sudo pip3 install --upgrade cloudsmith-cli
           cloudsmith push deb -k ${{ secrets.CLOUDSMITH_KEY }} prebuiltmpr/prebuiltmpr/debian/focal ./${FULL_PKGVER}
-

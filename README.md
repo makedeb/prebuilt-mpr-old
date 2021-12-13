@@ -59,4 +59,3 @@ echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.d
 |   github-cli-bin   | [![github-cli-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/github-cli-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/github-cli-bin.yml)  |
 |   stoke-git   | [![stoke-git](https://github.com/PrebuiltMPR/builder/actions/workflows/stoke-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/stoke-git.yml)  |
 |   i3-gaps-git   | [![i3-gaps-git](https://github.com/PrebuiltMPR/builder/actions/workflows/i3-gaps-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/i3-gaps-git.yml)  |
-|   joplin-appimage   | [![joplin-appimage](https://github.com/PrebuiltMPR/builder/actions/workflows/joplin-appimage.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/joplin-appimage.yml)  |

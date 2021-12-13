@@ -33,7 +33,7 @@ jobs:
         with:
           host: mpr.craftcat.dev
           username: builder
-          port: 22
+          port: 12488
           key: ${{ secrets.BUILDER_KEY }}
           source: ${{ env.FULL_PKGVER }}
           target: "/builds/bullseye"
@@ -63,7 +63,7 @@ jobs:
         with:
           host: mpr.craftcat.dev
           username: builder
-          port: 22
+          port: 12488
           key: ${{ secrets.BUILDER_KEY }}
           source: ${{ env.FULL_PKGVER }}
           target: "/builds/focal"
@@ -74,5 +74,5 @@ jobs:
           host: mpr.craftcat.dev
           username: builder
           key: ${{ secrets.BUILDER_KEY }}
-          port: 22
+          port: 12488
           script: "/bin/bash /builds/copy-debs-focal.sh"

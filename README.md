@@ -84,3 +84,4 @@ curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/config.deb.t
 |   projectlibre-bin   | [![projectlibre-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/projectlibre-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/projectlibre-bin.yml)  |
 |   aws-cli   | [![aws-cli](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml)  |
 |   aws-cli   | [![aws-cli](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml)  |
+|   aws-cli   | [![aws-cli](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml)  |

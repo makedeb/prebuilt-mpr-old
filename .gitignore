@@ -1,1 +1,4 @@
 .directory
+*.json
+*.py
+*.tmp

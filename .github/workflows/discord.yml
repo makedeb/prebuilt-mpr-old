@@ -29,9 +29,9 @@ jobs:
           mv -v ~/build/results/${FULL_PKGVER} .
       - name: upload
         run: |   
-          sudo apt install python3 python3-pip
+          sudo apt-get install python3 python3-pip
           sudo pip3 install --upgrade cloudsmith-cli
-          cloudsmith push deb -k ${{ secrets.CLOUDSMITH_KEY }} prebuiltmpr/prebuiltmpr/debian/bullseye ./${FULL_PKGVER}
+          cloudsmith push deb --republish -k ${{ secrets.CLOUDSMITH_KEY }} prebuiltmpr/prebuiltmpr/debian/bullseye ${FULL_PKGVER}
 
   focal:
     runs-on: ubuntu-latest
@@ -53,6 +53,6 @@ jobs:
           mv -v ~/build/results/${FULL_PKGVER} .
       - name: upload    
         run: |
-          sudo apt install python3 python3-pip
+          sudo apt-get install python3 python3-pip
           sudo pip3 install --upgrade cloudsmith-cli
-          cloudsmith push deb -k ${{ secrets.CLOUDSMITH_KEY }} prebuiltmpr/prebuiltmpr/debian/focal ./${FULL_PKGVER}
+          cloudsmith push deb --republish -k ${{ secrets.CLOUDSMITH_KEY }} prebuiltmpr/prebuiltmpr/ubuntu/focal ${FULL_PKGVER}

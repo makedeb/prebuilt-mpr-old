@@ -80,4 +80,3 @@ curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/config.deb.t
 |   p7zip-desktop-git   | [![p7zip-desktop-git](https://github.com/PrebuiltMPR/builder/actions/workflows/p7zip-desktop-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/p7zip-desktop-git.yml)  |
 |   keyboard-center   | [![keyboard-center](https://github.com/PrebuiltMPR/builder/actions/workflows/keyboard-center.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/keyboard-center.yml)  |
 |   koreader-bin   | [![koreader-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/koreader-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/koreader-bin.yml)  |
-|   koreader-bin   | [![koreader-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/koreader-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/koreader-bin.yml)  |

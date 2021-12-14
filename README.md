@@ -85,3 +85,4 @@ curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/config.deb.t
 |   aws-cli   | [![aws-cli](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml)  |
 |   aws-cli   | [![aws-cli](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml)  |
 |   aws-cli   | [![aws-cli](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml)  |
+|   aws-cli   | [![aws-cli](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml)  |

@@ -82,3 +82,4 @@ curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/config.deb.t
 |   koreader-bin   | [![koreader-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/koreader-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/koreader-bin.yml)  |
 |   kubectl-bin   | [![kubectl-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/kubectl-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/kubectl-bin.yml)  |
 |   projectlibre-bin   | [![projectlibre-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/projectlibre-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/projectlibre-bin.yml)  |
+|   aws-cli   | [![aws-cli](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/aws-cli.yml)  |

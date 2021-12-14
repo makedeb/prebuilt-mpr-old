@@ -7,19 +7,36 @@ PrebuiltMPR is an APT repository for Debian stable and Ubuntu LTS which provides
 If you want to have a certain package available in PrebuiltMPR, then please feel free to open an [issue](https://github.com/PrebuiltMPR/builder/issues) with a package request.
 
 ## Get Started
-### Add GPG key
+### Debian 11 (bullseye)
+#### Add Dependencies
 ```bash
-wget -qO - 'https://mpr.craftcat.dev/pubkey.gpg' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuiltmpr.gpg &> /dev/null
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
 ```
 
-### Debian 11 (bullseye)
+#### Add GPG key
 ```bash
-echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.dev/ bullseye main' | sudo tee /etc/apt/sources.list.d/prebuiltmpr.list
+curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/gpg.96BF50280AB09218.key' | sudo apt-key add -
+```
+
+#### Add Repo
+```bash
+curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/config.deb.txt?distro=debian&codename=bullseye' | sudo tee /etc/apt/sources.list.d/prebuiltmpr.list
 ```
 
 ### Ubuntu 20.04 LTS (focal)
+#### Add Dependencies
 ```bash
-echo 'deb [signed-by=/usr/share/keyrings/prebuiltmpr.gpg] https://mpr.craftcat.dev/ focal main' | sudo tee /etc/apt/sources.list.d/prebuiltmpr.list
+sudo apt install -y apt-transport-https
+```
+
+#### Add GPG key
+```bash
+curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/gpg.96BF50280AB09218.key' | sudo apt-key add -
+```
+
+#### Add Repo
+```bash
+curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/config.deb.txt?distro=ubuntu&codename=focal' | sudo tee /etc/apt/sources.list.d/prebuiltmpr.list
 ```
 
 [![Hosted By: Cloudsmith](https://img.shields.io/badge/OSS%20hosting%20by-cloudsmith-blue?logo=cloudsmith&style=flat-square)](https://cloudsmith.com)

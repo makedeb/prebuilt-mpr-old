@@ -5,7 +5,7 @@ then
     echo "ERROR: pls specify a software to build!"
     exit 1
 fi
-git clone https://mpr.hunterwittenborn.com/$1.git ~/source
+git clone https://mpr.makedeb.org/$1.git ~/source
 
 cd ~/source
 zabuilder.sh "$1" --container

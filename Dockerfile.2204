@@ -1,0 +1,48 @@
+FROM ubuntu:jammy
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Europe/Berlin
+
+LABEL org.opencontainers.image.source="https://github.com/PrebuiltMPR/builder"
+
+RUN apt-get update
+RUN apt-get dist-upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration -y
+RUN apt-get install wget gpg sudo apt-utils ca-certificates -y
+RUN apt-get install lsb-release gettext wget curl build-essential cmake g++ sudo gpg git autoconf automake libtool pkg-config libpthread-stubs0-dev libssl-dev libevent-pthreads-2.1-7 zstd -y
+
+# Install makedeb & add PrebuiltMPR repo
+RUN wget -qO - "https://proget.hunterwittenborn.com/debian-feeds/makedeb.pub" | \
+    gpg --dearmor | \
+    tee /usr/share/keyrings/makedeb-archive-keyring.gpg 1> /dev/null
+
+RUN echo "deb [signed-by=/usr/share/keyrings/makedeb-archive-keyring.gpg arch=all] https://proget.hunterwittenborn.com/ makedeb main" | \
+    tee /etc/apt/sources.list.d/makedeb.list
+    
+RUN curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/gpg.96BF50280AB09218.key' | \
+    sudo apt-key add -
+    
+RUN curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/config.deb.txt?distro=ubuntu&codename=jammy' | \
+    sudo tee /etc/apt/sources.list.d/prebuiltmpr.list
+    
+RUN apt-get update
+RUN apt-get install makedeb -y
+
+# Set up default build user
+RUN useradd -m -d /build -s /bin/bash builder
+RUN echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+COPY zbuilder.sh /usr/bin
+RUN chmod +x /usr/bin/zbuilder.sh
+COPY zabuilder.sh /usr/bin
+RUN chmod +x /usr/bin/zabuilder.sh
+RUN mkdir /results
+RUN chown -R builder:builder /results
+
+WORKDIR /results
+VOLUME /results
+
+RUN chown -R builder:builder /results
+USER builder
+
+ENTRYPOINT ["zbuilder.sh"]

@@ -44,3 +44,18 @@ jobs:
           echo $CR_PAT | docker login ghcr.io -u PrebuiltMPR --password-stdin
           docker build . -f Dockerfile.2004 --pull --no-cache --tag ghcr.io/prebuiltmpr/mpr-builder:focal
           docker push ghcr.io/prebuiltmpr/mpr-builder:focal
+          
+  jammy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: build docker container
+        env:
+          HUB_NAME: ${{ secrets.DOCKER_NAME }}
+          HUB_KEY: ${{ secrets.DOCKER_TOKEN }}
+          CR_PAT: ${{ secrets.CR_PAT }}
+        run: |
+          echo $CR_PAT | docker login ghcr.io -u PrebuiltMPR --password-stdin
+          docker build . -f Dockerfile.2204 --pull --no-cache --tag ghcr.io/prebuiltmpr/mpr-builder:jammy
+          docker push ghcr.io/prebuiltmpr/mpr-builder:jammy

@@ -7,7 +7,8 @@ on:
     paths:
       - '.github/workflows/!baseimages.yml'
       - 'Dockerfile.debian11'
-      - 'Dockerfile.focal'
+      - 'Dockerfile.2004'
+      - 'Dockerfile.2204'
       - 'zabuilder.sh'
       - 'zbuilder.sh'
   workflow_dispatch:
@@ -41,5 +42,5 @@ jobs:
           CR_PAT: ${{ secrets.CR_PAT }}
         run: |
           echo $CR_PAT | docker login ghcr.io -u PrebuiltMPR --password-stdin
-          docker build . -f Dockerfile.focal --pull --no-cache --tag ghcr.io/prebuiltmpr/mpr-builder:focal
+          docker build . -f Dockerfile.2004 --pull --no-cache --tag ghcr.io/prebuiltmpr/mpr-builder:focal
           docker push ghcr.io/prebuiltmpr/mpr-builder:focal

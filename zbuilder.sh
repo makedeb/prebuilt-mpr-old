@@ -17,7 +17,7 @@ do
     if [ "$key" == "depends" ];
     then
         DEP=$(echo "$value" | cut -d ' ' -f2 | cut -d '>' -f1)
-        echo "installing $DEP..."
+        echo "MPR-helper: installing $DEP..."
         una install "$DEP"
     fi
 done 9< "SINFO"

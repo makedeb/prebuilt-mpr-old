@@ -16,17 +16,21 @@ RUN wget -qO - "https://proget.hunterwittenborn.com/debian-feeds/makedeb.pub" | 
     gpg --dearmor | \
     tee /usr/share/keyrings/makedeb-archive-keyring.gpg 1> /dev/null
 
-RUN curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/gpg.96BF50280AB09218.key' | \
-    sudo apt-key add -
+#RUN curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/gpg.96BF50280AB09218.key' | \
+#    sudo apt-key add -
 
 RUN echo "deb [signed-by=/usr/share/keyrings/makedeb-archive-keyring.gpg arch=all] https://proget.hunterwittenborn.com/ makedeb main" | \
     tee /etc/apt/sources.list.d/makedeb.list
 
-RUN curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/config.deb.txt?distro=ubuntu&codename=focal' | \
-    sudo tee /etc/apt/sources.list.d/prebuiltmpr.list
+#RUN curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/config.deb.txt?distro=ubuntu&codename=focal' | \
+#    sudo tee /etc/apt/sources.list.d/prebuiltmpr.list
 
 RUN apt-get update
 RUN apt-get install makedeb -y
+
+# Install UNA helper
+ADD https://raw.githubusercontent.com/AFK-OS/una/main/una una
+RUN sudo install -D -m755 una -t /usr/bin
 
 # Set up default build user
 RUN useradd -m -d /build -s /bin/bash builder

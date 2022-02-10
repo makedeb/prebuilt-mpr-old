@@ -1,0 +1,58 @@
+name: thunderbird-en-us-bin-wayland
+
+on:
+  schedule:
+    - cron: '5 1 * * *'
+  push:
+    paths:
+      - '.github/workflows/thunderbird-en-us-bin-wayland.yml'
+  workflow_dispatch:
+
+jobs:
+  bullseye:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup build folder
+        run: |
+          mkdir ~/build
+          chmod 777 -R ~/build
+
+      - name: build
+        run: |
+          docker run --name builder --user builder --net host ghcr.io/prebuiltmpr/mpr-builder:bullseye thunderbird-en-us-bin-wayland
+          docker cp builder:/results ~/build
+          docker rm builder
+          export FULL_PKGVER="$(cat ~/build/results/name.txt)"
+          echo "FULL_PKGVER=$(cat ~/build/results/name.txt)" >> $GITHUB_ENV
+          mv -v ~/build/results/${FULL_PKGVER} .
+      - name: upload
+        run: |   
+          sudo apt-get install python3 python3-pip
+          sudo pip3 install --upgrade cloudsmith-cli
+          cloudsmith push deb --republish -k ${{ secrets.CLOUDSMITH_KEY }} prebuiltmpr/prebuiltmpr/debian/bullseye ${FULL_PKGVER}
+
+  focal:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup build folder
+        run: |
+          mkdir ~/build
+          chmod 777 -R ~/build
+
+      - name: build
+        run: |
+          docker run --name builder --user builder --net host ghcr.io/prebuiltmpr/mpr-builder:focal thunderbird-en-us-bin-wayland
+          docker cp builder:/results ~/build
+          docker rm builder
+          export FULL_PKGVER="$(cat ~/build/results/name.txt)"
+          echo "FULL_PKGVER=$(cat ~/build/results/name.txt)" >> $GITHUB_ENV
+          mv -v ~/build/results/${FULL_PKGVER} .
+      - name: upload    
+        run: |
+          sudo apt-get install python3 python3-pip
+          sudo pip3 install --upgrade cloudsmith-cli
+          cloudsmith push deb --republish -k ${{ secrets.CLOUDSMITH_KEY }} prebuiltmpr/prebuiltmpr/ubuntu/focal ${FULL_PKGVER}

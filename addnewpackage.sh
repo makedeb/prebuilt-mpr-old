@@ -6,7 +6,7 @@ then
     exit 1;
 fi
 
-cp builder.yml.template $1.yml
+cp builder_template.yml $1.yml
 sed -i -e "s|_template_|$1|g" $1.yml
 mv $1.yml ./.github/workflows
 

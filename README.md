@@ -90,3 +90,4 @@ curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/config.deb.t
 |   firefox-en-us-bin-wayland   | [![firefox-en-us-bin-wayland](https://github.com/PrebuiltMPR/builder/actions/workflows/firefox-en-us-bin-wayland.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/firefox-en-us-bin-wayland.yml)  |
 |   firefox-en-us-bin   | [![firefox-en-us-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/firefox-en-us-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/firefox-en-us-bin.yml)  |
 |   hugo   | [![hugo](https://github.com/PrebuiltMPR/builder/actions/workflows/hugo.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/hugo.yml)  |
+|   atom-bin   | [![atom-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/atom-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/atom-bin.yml)  |

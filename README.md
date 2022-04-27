@@ -78,7 +78,6 @@ curl -1sLf 'https://dl.cloudsmith.io/public/prebuiltmpr/prebuiltmpr/config.deb.t
 |   github-cli-bin   | [![github-cli-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/github-cli-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/github-cli-bin.yml)  |
 |   i3-gaps-git   | [![i3-gaps-git](https://github.com/PrebuiltMPR/builder/actions/workflows/i3-gaps-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/i3-gaps-git.yml)  |
 |   p7zip-desktop-git   | [![p7zip-desktop-git](https://github.com/PrebuiltMPR/builder/actions/workflows/p7zip-desktop-git.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/p7zip-desktop-git.yml)  |
-|   keyboard-center   | [![keyboard-center](https://github.com/PrebuiltMPR/builder/actions/workflows/keyboard-center.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/keyboard-center.yml)  |
 |   koreader-bin   | [![koreader-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/koreader-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/koreader-bin.yml)  |
 |   kubectl-bin   | [![kubectl-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/kubectl-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/kubectl-bin.yml)  |
 |   projectlibre-bin   | [![projectlibre-bin](https://github.com/PrebuiltMPR/builder/actions/workflows/projectlibre-bin.yml/badge.svg)](https://github.com/PrebuiltMPR/builder/actions/workflows/projectlibre-bin.yml)  |
